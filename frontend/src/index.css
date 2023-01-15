@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --orange: #f48915;
+  --appColor: #3c3f45;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Source+Serif+4:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #e4dede;
+   margin: 0;
+  /* font-family: 'Roboto Condensed', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+}
+
+
+
+
+@layer base {
+  button {
+    @apply border border-black rounded-xl px-5 py-1;
+  }
+}
+
+/* MARQUEE SECTION */
+
+.marquee-section {
+  width: 100%;
+  overflow: hidden;
+  padding-top:30px ;
+}
+
+.marquee-container {
+  width: 100%;
+}
+
+.marquee3k {
+  background-color: transparent;
+  height: 85px;
+  display: flex;
+  align-items: center;
+}
+
+.marquee3k h4 {
+  color: var(--yellow-theme-main-color);
+  font-size: 18px;
+}
+.marquee3k h4 span {
+  margin: 0 30px;
+}
+
