@@ -42,7 +42,7 @@ export default function CartScreen() {
           {cartItems.length === 0 ? (
             <ErrorBox>
               Cart is empty.{" "}
-              <Link to="/" className=" hover:underline">
+              <Link to="/" className=" hover:underline cursor-default">
                 Go Shopping
               </Link>
             </ErrorBox>
@@ -112,7 +112,7 @@ export default function CartScreen() {
                     <div
                       onClick={checkoutHandler}
                       type="button"
-                      className="text-center mx-auto rounded-full bg-orange-300  text-white text-l py-2 px-4 mt-5 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 hover:bg-orange-500"
+                      className="text-center mx-auto rounded-full bg-orange-300 cursor-default text-white text-l py-2 px-4 mt-5 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 hover:bg-orange-500"
                       disabled={cartItems.length === 0}
                     >
                       Proceed to Checkout

@@ -87,10 +87,10 @@ const Navbar = () => {
         </div>
       </Link>
       {userInfo ? (
-        <div className="relative ">
+        <div className=" ">
           <button
             onClick={handleOpen}
-            className=" text-[#fa8517] bg-[var(--appColor)]   focus:ring-orange-200 font-medium rounded-lg text-sm px-2 py-1.5 text-center inline-flex items-center "
+            className=" text-[#fa8517] bg-[var(--appColor)]  ml-2 focus:ring-orange-200 font-medium rounded-lg text-sm px-2 py-1.5 text-center inline-flex items-center "
             type="button"
           >
             {userInfo.name}
@@ -104,22 +104,29 @@ const Navbar = () => {
               <path strokeWidth="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
-          <div className="z-10  bg-white divide-y divide-gray-100 rounded shadow w-44">
+
+          <div className=" text-[#fa8517] text-center items-center text-xs py-1 px-1  md:px-2 md:py-2  md:text-sm rounded-full font-bold outline-none border-none ">
             {open ? (
-              <ul className="absolute text-center text-sm ">
+              <ul className="absolute text-center text-sm">
                 <li>
-                  <Link to="/profile" className="block ">
+                  <Link
+                    to="/profile"
+                    className="block cursor-default bg-gray-500 mb-1 mt-0 text-[#fa8517] rounded"
+                  >
                     User Profile
                   </Link>
                 </li>
                 <li>
-                  <Link to="/orderhistory" className="block">
+                  <Link
+                    to="/orderhistory"
+                    className="block cursor-default bg-gray-500 mb-1 text-[#fa8517] rounded"
+                  >
                     Order History
                   </Link>
                 </li>
                 <li>
                   <Link
-                    className="block"
+                    className="block cursor-default bg-gray-500 text-[#fa8517] rounded  "
                     to="#signout"
                     onClick={signoutHandler}
                   >
@@ -128,20 +135,11 @@ const Navbar = () => {
                 </li>
               </ul>
             ) : null}
-            {/* <div>
-              <Link
-                className="block text-center"
-                to="#signout"
-                onClick={signoutHandler}
-              >
-                Sign Out
-              </Link>
-            </div> */}
           </div>
         </div>
       ) : (
         <Link
-          className="bg-[var(--appColor)] text-[#fa8517] text-center items-center text-xs py-1 px-1  md:px-2 md:py-2  md:text-sm rounded-full font-bold outline-none border-none "
+          className="bg-[var(--appColor)] text-[#fa8517] text-center items-center text-xs py-1 px-1  md:px-2 md:py-2  md:text-sm rounded-full font-bold outline-none border-none cursor-default "
           to="/signin"
         >
           Sign In
