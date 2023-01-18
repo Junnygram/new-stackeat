@@ -125,13 +125,13 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link
+                  <div
                     className="block cursor-default bg-gray-500 text-[#fa8517] rounded  "
-                    to="#signout"
+                    // to="#signout"
                     onClick={signoutHandler}
                   >
                     Sign Out
-                  </Link>
+                  </div>
                 </li>
               </ul>
             ) : null}
