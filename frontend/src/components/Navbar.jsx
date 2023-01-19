@@ -90,7 +90,7 @@ const Navbar = () => {
         <div className=" ">
           <button
             onClick={handleOpen}
-            className=" text-[#fa8517] bg-[var(--appColor)]  ml-2 focus:ring-orange-200 font-medium rounded-lg text-sm px-2 py-1.5 text-center inline-flex items-center "
+            className=" text-[#fa8517] bg-[var(--appColor)] cursor-default ml-2 focus:ring-orange-200 mt-2 font-medium rounded-lg text-sm px-2 py-1.5 text-center inline-flex items-center "
             type="button"
           >
             {userInfo.name}
@@ -105,7 +105,7 @@ const Navbar = () => {
             </svg>
           </button>
 
-          <div className=" text-[#fa8517] text-center items-center text-xs py-1 px-1  md:px-2 md:py-2  md:text-sm rounded-full font-bold outline-none border-none ">
+          <div className=" text-[#fa8517] text-center items-center text-xs py-1 px-1   md:text-sm rounded-full font-bold outline-none border-none ">
             {open ? (
               <ul className="absolute text-center text-sm">
                 <li>
@@ -126,7 +126,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <div
-                    className="block cursor-default bg-gray-500 text-[#fa8517] rounded  "
+                    className="block cursor-default bg-gray-500 text-[#fa8517] rounded "
                     // to="#signout"
                     onClick={signoutHandler}
                   >
