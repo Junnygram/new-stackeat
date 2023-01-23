@@ -13,15 +13,6 @@ const reducer = (state, action) => {
       return { ...state, products: action.payload, loading: false };
     case "FETCH_FAIL":
       return { ...state, loading: false, error: action.payload };
-    case "FILTER":
-      return {
-        ...state,
-        products: action.payload.products,
-        page: action.payload.page,
-        pages: action.payload.pages,
-        countProducts: action.payload.countProducts,
-        loading: false,
-      };
 
     default:
       return state;
@@ -123,8 +114,8 @@ function Food() {
           <p className="font-bold text-gray-700">Filter Price</p>
           <div className="flex justify-between max-w-[390px] w-full">
             <button
-            // onClick={() => setfilterPrice("$10")}
-            // className="hover:italic m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white"
+              // onClick={() => setfilterPrice("$10")}
+              className="hover:italic m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white"
             >
               $10
             </button>
