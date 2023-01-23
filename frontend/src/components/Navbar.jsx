@@ -1,11 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import {
-  AiFillTags,
-  AiOutlineClose,
-  AiOutlineMenu,
-  AiOutlineSearch,
-} from "react-icons/ai";
+import { AiFillTags, AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { BsFillCartFill, BsFillSaveFill } from "react-icons/bs";
 import { TbTruckDelivery } from "react-icons/tb";
 import { FaUserFriends, FaWallet } from "react-icons/fa";
@@ -16,6 +11,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { Store } from "../Store";
+import SearchBox from "./SearchBox";
 
 const Navbar = () => {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -67,12 +63,7 @@ const Navbar = () => {
         animate={controls}
         className="bg-[var(--appColor)] rounded-full flex items-center px-2 w-[200px] sm:w-[400px] lg:w-[500px]"
       >
-        <AiOutlineSearch size={25} className="text-[#fa8517]" />
-        <input
-          type="search"
-          className="bg-transparent p-2 w-full focus:outline-none text-white"
-          placeholder="Search foods"
-        />
+        <SearchBox />
       </motion.div>
       {/* Cart Button */}
       <Link to="/cart">

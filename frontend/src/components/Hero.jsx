@@ -25,7 +25,7 @@ const Hero = () => {
           </h1>
         </div>
         <img
-          className="w-full max-h-[500px] object-cover mt-2"
+          className="w-full max-h-[500px] object-cover mt-5 sm:mt-7"
           src="https://images.pexels.com/photos/1199960/pexels-photo-1199960.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt="/"
         />

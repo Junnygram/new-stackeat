@@ -1,9 +1,10 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import axios from "axios";
 import Product from "./Product";
 import { Helmet } from "react-helmet-async";
 import LoadingBox from "./LoadingBox";
 import { getError } from "../utils";
+import { toast } from "react-toastify";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -13,13 +14,22 @@ const reducer = (state, action) => {
       return { ...state, products: action.payload, loading: false };
     case "FETCH_FAIL":
       return { ...state, loading: false, error: action.payload };
+    case "FILTER":
+      return {
+        ...state,
+        products: action.payload.products,
+        page: action.payload.page,
+        pages: action.payload.pages,
+        countProducts: action.payload.countProducts,
+        loading: false,
+      };
+
     default:
       return state;
   }
 };
 
 function Food() {
-  // const [ products, setProducts ] = useState( [] );
   const [{ loading, error, products }, dispatch] = useReducer(reducer, {
     products: [],
     loading: true,
@@ -27,20 +37,20 @@ function Food() {
   });
   useEffect(() => {
     const fetchData = async () => {
-      //const result = await axios.get("/api/item");
-      //SetProducts(result.data);
       dispatch({ type: "FETCH_REQUEST" });
       try {
         const result = await axios.get("/api/products");
         dispatch({ type: "FETCH_SUCCESS", payload: result.data });
       } catch (err) {
         dispatch({ type: "FETCH_FAIL", payload: getError(err) });
-        // dispatch({ type: "FETCH_FAIL", payload: err.message });
       }
     };
     fetchData();
   }, []);
   console.log(products);
+
+  // // //filter
+
   // const [foods, setFoods] = useState(products);
 
   // //   Filter Type burgers/pizza/etc
@@ -114,25 +124,25 @@ function Food() {
           <p className="font-bold text-gray-700">Filter Price</p>
           <div className="flex justify-between max-w-[390px] w-full">
             <button
-              // onClick={() => filterPrice("$10")}
-              className="hover:italic m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white"
+            // onClick={() => setfilterPrice("$10")}
+            // className="hover:italic m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white"
             >
               $10
             </button>
             <button
-              // onClick={() => filterPrice("$20")}
+              // onClick={() => setfilterPrice("$20")}
               className="hover:italic m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white"
             >
               $20
             </button>
             <button
-              // onClick={() => filterPrice("$50")}
+              // onClick={() => setfilterPrice("$50")}
               className="hover:italic m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white"
             >
               $50
             </button>
             <button
-              // onClick={() => filterPrice("$100")}
+              // onClick={() => setfilterPrice("$100")}
               className="hover:italic m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white"
             >
               $100
