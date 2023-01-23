@@ -37,9 +37,9 @@ app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
 
-app.get("/api/category", (req, res) => {
-  res.send(data.categories);
-});
+// app.get("/api/category", (req, res) => {
+//   res.send(data.categories);
+// });
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

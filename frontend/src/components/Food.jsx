@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import axios from "axios";
 import Product from "./Product";
 import { Helmet } from "react-helmet-async";
 import LoadingBox from "./LoadingBox";
 import { getError } from "../utils";
-import { toast } from "react-toastify";
 
 const reducer = (state, action) => {
   switch (action.type) {
